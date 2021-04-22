@@ -1,6 +1,6 @@
 //require
 const express = require("express");
-
+const cors = require("cors");
 //internal code
 const { getJobs } = require("./Services");
 
@@ -11,7 +11,7 @@ const server = express();
 // if (process.env.PORT !== undefined) {
 //   PORT = process.env.PORT;
 // }
-
+server.use(cors());
 const PORT = process.env.PORT ? process.env.PORT : 8080;
 
 server.listen(PORT, () => {
