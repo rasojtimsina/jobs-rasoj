@@ -5,7 +5,15 @@ const express = require("express");
 const { getJobs } = require("./Services");
 
 const server = express();
-const PORT = 8080;
+
+// let PORT = 8080;
+
+// if (process.env.PORT !== undefined) {
+//   PORT = process.env.PORT;
+// }
+
+const PORT = process.env.PORT ? process.env.PORT : 8080;
+
 server.listen(PORT, () => {
   console.log(`server listening on ${PORT}`);
 });
